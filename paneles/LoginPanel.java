@@ -1,10 +1,13 @@
-package vistas;
+package paneles;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.*;
+
+import modulos.DashBoard;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -13,9 +16,11 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class LoginView {
+import control.LoginControler;
+
+public class LoginPanel  {
 private JPanel panelLogin;
-public LoginView (){
+public LoginPanel (){
  panelLogin = new JPanel();
  panelLogin.setSize(500, 800);
  panelLogin.setOpaque(true);
@@ -57,10 +62,29 @@ panelLogin.add(entraContrasena, gbc);
 //BOTON
 JButton btnIngresar = new JButton("INGRESAR");
 btnIngresar.setPreferredSize(new Dimension(100, 50));
-gbc.gridx = 0;
+gbc.gridx = 1;
 gbc.gridy = 3;
-gbc.gridwidth = 2;
+gbc.anchor = GridBagConstraints.EAST;
+gbc.fill = GridBagConstraints.NONE;
 panelLogin.add(btnIngresar, gbc);
+
+//Acción del botón 
+btnIngresar.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e){
+
+        String entradaUsuario=entradaCorreo.getText();
+        String entradaContra = new String(entraContrasena.getPassword());
+
+
+        LoginControler login = new LoginControler();
+
+        if (login.validacionDatos(entradaUsuario, entradaContra)) {
+            frame.dispose();
+            new DashBoard();
+
+    }}
+});
 
 }
 public JPanel getPanelLogin() {
