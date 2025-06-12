@@ -10,22 +10,25 @@ import java.awt.event.*;
 import modulos.DashBoard;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 import control.LoginControler;
 
 public class LoginPanel  {
-private JPanel panelLogin;
+private JPanel loginPanel;
+
 public LoginPanel (){
- panelLogin = new JPanel();
- panelLogin.setSize(500, 800);
- panelLogin.setOpaque(true);
- panelLogin.setBackground(Color. WHITE);
- panelLogin.setLayout(new GridBagLayout());
+ loginPanel = new JPanel();
+ loginPanel.setSize(500, 800);
+ loginPanel.setOpaque(true);
+ loginPanel.setBackground(Color. WHITE);
+ loginPanel.setLayout(new GridBagLayout());
 
 //ADMINISTRADOR DE DISEÑO
 GridBagConstraints gbc = new GridBagConstraints();
@@ -41,7 +44,7 @@ gbc.weightx = 1.0;
  gbc.gridy = 0;
  gbc.gridwidth = 2;
  gbc.anchor = GridBagConstraints.CENTER;
- panelLogin.add(titulo, gbc);
+ loginPanel.add(titulo, gbc);
 
 
 //Entrada correo
@@ -49,7 +52,7 @@ JTextField entradaCorreo = new JTextField();
 entradaCorreo.setPreferredSize(new Dimension(100, 50));
 gbc.gridx = 1; 
 gbc.gridy = 1; 
-panelLogin.add(entradaCorreo, gbc);
+loginPanel.add(entradaCorreo, gbc);
 
 
 //Entrada contraseña
@@ -57,7 +60,7 @@ JPasswordField entraContrasena = new JPasswordField();
 entraContrasena.setSize(new Dimension(100, 50));
 gbc.gridx = 1; 
 gbc.gridy = 2; 
-panelLogin.add(entraContrasena, gbc);
+loginPanel.add(entraContrasena, gbc);
 
 //BOTON
 JButton btnIngresar = new JButton("INGRESAR");
@@ -66,7 +69,7 @@ gbc.gridx = 1;
 gbc.gridy = 3;
 gbc.anchor = GridBagConstraints.EAST;
 gbc.fill = GridBagConstraints.NONE;
-panelLogin.add(btnIngresar, gbc);
+loginPanel.add(btnIngresar, gbc);
 
 //Acción del botón 
 btnIngresar.addActionListener(new ActionListener() {
@@ -76,17 +79,16 @@ btnIngresar.addActionListener(new ActionListener() {
         String entradaUsuario=entradaCorreo.getText();
         String entradaContra = new String(entraContrasena.getPassword());
 
-
-        LoginControler login = new LoginControler();
-
-        if (login.validacionDatos(entradaUsuario, entradaContra)) {
-            frame.dispose();
-            new DashBoard();
-
-    }}
-});
-
+if (new LoginControler().validacionDatos(entradaContra, entradaContra)) {
+  new DashBoard();
+  JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(loginPanel);
+  frame.dispose();
 }
-public JPanel getPanelLogin() {
-    return panelLogin;
-}}
+    }
+});
+}
+
+public JPanel getPanel() {
+    return loginPanel;
+}
+}

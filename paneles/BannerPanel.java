@@ -14,7 +14,7 @@ public class BannerPanel extends JPanel{
 
     } 
     
-    public JPanel getBannJPanel(){
+    public JPanel getBanner(){
         return this;
     }
 }
