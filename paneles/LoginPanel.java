@@ -7,8 +7,6 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.*;
 
-import modulos.DashBoard;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,6 +17,7 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 import control.LoginControler;
+import modulos.Dashboard;
 
 public class LoginPanel  {
 private JPanel loginPanel;
@@ -79,8 +78,8 @@ btnIngresar.addActionListener(new ActionListener() {
         String entradaUsuario=entradaCorreo.getText();
         String entradaContra = new String(entraContrasena.getPassword());
 
-if (new LoginControler().validacionDatos(entradaContra, entradaContra)) {
-  new DashBoard();
+if (new LoginControler().validacionDatos(entradaUsuario, entradaContra)) {
+  Dashboard dash = new Dashboard();
   JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(loginPanel);
   frame.dispose();
 }

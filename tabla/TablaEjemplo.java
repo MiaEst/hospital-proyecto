@@ -1,6 +1,9 @@
 package tabla;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
+import datos.pacientes;
+
 import java.awt.*;
 
 public class TablaEjemplo extends JPanel {
@@ -8,22 +11,13 @@ public class TablaEjemplo extends JPanel {
     public TablaEjemplo() {
 
         setLayout(new BorderLayout());
+  String[] columnas = {"ID del paciente", "Nombre del paciente", "Edad"};
+        Object[][] datos = new pacientes().getDatos();
 
-        String[] columnas = { "ID", "Nombre", "Edad" };
-        
-      Object[][] datos = {
-            { 1, "Ana", 20 },
-            { 2, "Luis", 22 },
-            { 3, "María", 19 }
-        };
-        
-      DefaultTableModel modelo = new DefaultTableModel(datos, columnas);
-        JTable tabla = new JTable(modelo);
-        
-   
-        JScrollPane scrollPane = new JScrollPane(tabla);
-        
-    
-        add(scrollPane, BorderLayout.CENTER);
+        JTable table = new JTable(new DefaultTableModel(datos, columnas));
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        scrollPane.setPreferredSize(new Dimension(1600, 1000));
+        this.add(scrollPane, BorderLayout.CENTER);
+      }
     }
-}
