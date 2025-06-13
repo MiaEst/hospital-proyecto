@@ -1,32 +1,20 @@
 package control;
 
 public class LoginControler {
-    String[][] usuariosYContraseñas = {
-        {"alejos", "hola1234"},       // Dato original
-        {"maria22", "claveMaria"},    // +10 nuevos pares
-        {"juanP", "juanito456"},
-        {"ana_light", "anaSystem"},
-        {"superUser", "admin2024"},
-        {"coderPro", "javaIsFun"},
-        {"dragonZ", "firePassword"},
-        {"luna99", "moonLight"},
-        {"traveler", "viajes2023"},
-        {"bookLover", "readMore12"},
-        {"gamerX", "playStation5"}
+    String[][]  datos = {
+        {"drmorales", "1234"},{"jlopez", "abcd"},{"amartinez", "pass2025"},
+        {"cperez", "qwerty"},{"lgarcia", "admin123"},{"rfernandez", "secure!"},
+        {"mmendoza", "clave987"},{"asolano", "contraseña1"},{"vnavarro", "login2025"},
+        {"gcastillo", "miPass#7"},{"tjimenez", "root2025"}
     };
+    
 
-    public boolean validacionDatos(String entradaCorreo, String entraContrasenna) {
-
-        for (int i = 0; i < usuariosYContraseñas.length; i++) {
-            String usuarioCorrecto = usuariosYContraseñas[i][0];
-            String contraseñaCorrecta = usuariosYContraseñas[i][1];
-            
-         
-            if (usuarioCorrecto.equals(entradaCorreo) && 
-                contraseñaCorrecta.equals(entraContrasenna)) {
-                return true; 
+    public boolean validacionDatos(String entradaUsuario, String entradaContra) {
+        for (int i = 0; i < datos.length; i++) {
+            if (datos[i][0].equals(entradaUsuario) && datos[i][1].equals(entradaContra)) {
+                return true; // Coincidencia encontrada, acceso permitido
             }
         }
-        return false;
+        return false; // No se encontró ninguna coincidencia
     }
 }

@@ -63,7 +63,7 @@ gbc.gridy = 2;
 loginPanel.add(entraContrasena, gbc);
 
 //BOTON
-JButton btnIngresar = new JButton("INGRESAR");
+JButton btnIngresar = new JButton("Ingresar");
 btnIngresar.setPreferredSize(new Dimension(100, 50));
 gbc.gridx = 1;
 gbc.gridy = 3;
