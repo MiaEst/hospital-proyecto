@@ -10,7 +10,7 @@ public class BannerPanel extends JPanel{
     public BannerPanel(){
         this.setPreferredSize(new DimensionUIResource(500, 800));
         this.setOpaque(true);
-        this.setBackground(Color.RED);
+        this.setBackground(Color.YELLOW);
 
     } 
     

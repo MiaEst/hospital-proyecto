@@ -26,13 +26,13 @@ public class MenuLateralPanel extends JPanel{
 
 
         btnHistorial = new JButton("Historial");
-        btnHistorial.setFont(new Font("Arial", Font.PLAIN, 14)); // Fuente más pequeña
+        btnHistorial.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
         this.add(btnHistorial, gbc);
 
         // Botón Pacientes
         gbc.gridy = 1;
         btnPacientes = new JButton("Pacientes");
-        btnPacientes.setFont(new Font("Arial", Font.PLAIN, 14));
+        btnHistorial.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
         this.add(btnPacientes, gbc);
     }
 

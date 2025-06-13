@@ -11,7 +11,8 @@ public class HeaderPanel extends JPanel {
         this.setLayout(new GridBagLayout());
 
         // Tamaño de la letra
-        Font largeFont = new Font("Arial", Font.BOLD, 25);
+        Font largeFont = new Font("Comic Sans MS", Font.BOLD, 20);
+
         
 
         GridBagConstraints gbc = new GridBagConstraints();

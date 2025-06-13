@@ -2,10 +2,17 @@ package control;
 
 public class LoginControler {
     String[][]  datos = {
-        {"drmorales", "1234"},{"jlopez", "abcd"},{"amartinez", "pass2025"},
-        {"cperez", "qwerty"},{"lgarcia", "admin123"},{"rfernandez", "secure!"},
-        {"mmendoza", "clave987"},{"asolano", "contraseña1"},{"vnavarro", "login2025"},
-        {"gcastillo", "miPass#7"},{"tjimenez", "root2025"}
+    {"mrojas", "delta321"},
+    {"lhernandez", "clave2025"},
+    {"fcarrillo", "sunrise!"},
+    {"kvasquez", "orange77"},
+    {"epineda", "trustme1"},
+    {"zmedina", "omega@123"},
+    {"bescobar", "shadow45"},
+    {"jaguilar", "secure99"},
+    {"ynavarro", "moonlight"},
+    {"dcruz", "access2025"},
+    {"irodriguez", "power#1"}
     };
     
 
