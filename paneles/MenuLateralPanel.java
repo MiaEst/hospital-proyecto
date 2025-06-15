@@ -10,7 +10,7 @@ import java.awt.Font;
 
 public class MenuLateralPanel extends JPanel{
 
-      private JButton btnHistorial;
+    private JButton btnHistorial;
     private JButton btnPacientes;
 
     public MenuLateralPanel() {
